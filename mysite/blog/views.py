@@ -9,9 +9,8 @@ from django.shortcuts import redirect
 # Create your views here.
 def post_list(request):
     user = request.user
-    if user.has_perm(''):
-        posts = Post.objects.filter(
-            published_date__lte=timezone.now()).order_by('published_date')
+    if user.has_perm('blog.profesor'):
+        posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
         return render(request, 'blog/post_list.html', {'posts': posts })
     else:
         return render(request, 'blog/home.html')

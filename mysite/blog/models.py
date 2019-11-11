@@ -3,7 +3,6 @@ from django.utils import timezone
 from django.utils.translation import ugettext as _
 
 
-
 class Post(models.Model):
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
@@ -13,15 +12,16 @@ class Post(models.Model):
     published_date = models.DateTimeField(
             blank=True, null=True)
 
-def publish(self):
-    self.published_date = timezone.now()
-    self.save()
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
 
-def __str__(self):
-     return self.title
+    def __str__(self):
+        return self.title
 
-class Meta:
+    class Meta:
         permissions = (
             ('profesor',_('Es profesor')),
             ('alumno',_('Es alumno')),
         )
+
