@@ -19,6 +19,7 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+    
     class Meta:
         permissions = (
             ('profesor',_('Es profesor')),

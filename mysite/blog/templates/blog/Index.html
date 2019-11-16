@@ -1,4 +1,4 @@
-{% load static %}
+ {% load static %}
 <html>
 
 <head>
@@ -30,9 +30,11 @@
 <title>Document</title>
 </head>
 <header>
-    <a>
-        <h1 href="{% url 'blog:home' %}" class="Encabezado">Robin Resources</h1>
-    </a>
+    <div>
+        <a>
+            <h1 href="{% url 'blog:home' %}" class="Encabezado">Robin Resources</h1>
+        </a>
+    </div>
 
     <div id="cd-nav" class="">
         <a href="#0" class="cd-nav-trigger">Menu<span></span></a>

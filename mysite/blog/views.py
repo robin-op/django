@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.utils import timezone
+from django.views import generic
 from .models import Post
 from django.shortcuts import render, get_object_or_404
 from .forms import PostForm
@@ -7,6 +8,11 @@ from django.shortcuts import redirect
 
 
 # Create your views here.
+def main(request):
+    return render(request, 'blog/Index.html')
+def listaPersonajes (request):
+    return render(request, 'blog/ListaPersonajes.html')
+
 def post_list(request):
     user = request.user
     if user.has_perm('blog.profesor'):
@@ -45,3 +51,6 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
 
+class personajesView(generic.ListView):
+        template_name='blog/ListaPersonajes.html'
+       
