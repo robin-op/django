@@ -8,7 +8,7 @@
             <div class="12u">
 
                 <br>
-                <form action="/cuentaslogin/" method="POST" onsubmit="return enviar()">
+                <form action="/accounts/signup/" method="POST" onsubmit="return enviar()">
                     {% csrf_token %} {{ form.as_p }}
                     <br>
                     <input type="submit" name="submit" value="Registrar">
