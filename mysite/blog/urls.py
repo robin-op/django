@@ -1,16 +1,14 @@
 from django.conf.urls import include, url
-
-from django.urls import path
 from . import views
+from django.urls import include, path
+from django.views.generic import TemplateView
+
 app_name ='blog'
 urlpatterns = [
     url(r'^$', views.main,name='home'),
     url(r'^listaPersonajes$', views.listaPersonajes,name='personajes'),
-    path('post/<int:pk>/', views.post_detail, name='post_detail'),
-    path('post/new', views.post_new, name='post_new'),
-    path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
-    path(r'^post/new/$', views.post_new, name='post_new'),
-    
+    url(r'^signup$', views.signup,name='signup'),
+
 
 
 ]

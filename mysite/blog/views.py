@@ -12,6 +12,8 @@ def main(request):
     return render(request, 'blog/Index.html')
 def listaPersonajes (request):
     return render(request, 'blog/ListaPersonajes.html')
+def signup (request):
+    return render(request, 'blog/signup.html')
 
 def post_list(request):
     user = request.user
